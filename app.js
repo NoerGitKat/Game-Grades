@@ -34,9 +34,19 @@ const User = db.define('user', {
 	likesgames: Sequelize.BOOLEAN
 });
 
+db.sync();
+
 //Routes
 app.get('/', (req, res) => {
 	res.render('index');
+});
+
+app.get('/register', (req, res) => {
+	res.render('register');
+});
+
+app.post('/register', (req, res) => {
+	res.redirect('profile');
 });
 
 const server = app.listen(3000, () => {

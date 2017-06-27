@@ -2,40 +2,46 @@ html
 	head
 		title Home
 		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/index.css")
 	body
-		header
-			if user
-				.companyTitle
-					h1 Gamegrades
-					h3 Learning with games.
-				nav
-					ul
-						li
-							a(href="#") Class
-						li
-							a(href="#") Profile
-						li
-							a(href="#") Games
-			else
-				.companyTitle
-					h1 Gamegrades
-					h3 Learning with games.
-				nav
-					ul
-						li
-							a(href="#") Home
-						li
-							a(href="#") Register
-						li
-							a(href="#") Login
-						li
-							a(href="#") About
-		
-		.container
-			main
-				
+		.overallWrap
+			header
+				if user
+					a(href="/").companyTitle
+						h1 Gamegrades
+						h3 Learning with videogames.
+					nav
+						ul
+							li
+								a(href="#") Class
+							li
+								a(href="#") Profile
+							li
+								a(href="#") Games
+				else
+					a(href="/").companyTitle
+						h1 Gamegrades
+						h3 Learning with videogames.
+					nav
+						ul
+							li
+								a(href="#") Home
+							li
+								a(href="/register") Register
+							li
+								a(href="#") Login
+							li
+								a(href="#") About
+			
+			.container
+				main
+					iframe(width='560', height='315', src='https://www.youtube.com/embed/KyamsZXXF2w', frameborder='0', allowfullscreen='')
+					//- Text needs to be way shorter, different font, more visually appealing
+					h1 Gaming can change your life
+					p Modern science has proven video games helps build real-life skills. Here's how.
+					//- p Watching and analyzing how people play games reveal a great deal on the process of learning. More than that, even the internal mechanisms of games and the way they are designed can also tell a lot about how learning works. In his classic book “What Video Games Have to Teach Us about Learning and Literacy”, James Gee talks about a wide range of learning principles incorporated in video games which make these games  a real hit when they come out to the public.
+					br
+					a#register(href="/register") Register NOW
 
-
-
-		footer
-			h4 &copy; 2017 So Wow Inc. All Rights Reserved.
+			footer
+				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

@@ -1,0 +1,25 @@
+
+#register {
+	margin-top: 400px;
+}
+
+.container {
+	text-align: center;
+	margin: 80px auto;
+	padding: 10px;
+	width: 80%;
+	font-size: 30px;
+}
+
+.container h1 {
+	color: lightgreen;
+}
+
+.container iframe {
+	border-top: 1px solid darkgreen;
+	border-bottom: 1px solid darkgreen;
+	border-radius: 10px;
+	background-color: rgba(73, 155, 40, 0.2);
+	padding: 80px 200px;
+	width: 50%;
+}
