@@ -49,6 +49,10 @@ app.post('/register', (req, res) => {
 	res.redirect('profile');
 });
 
+app.get('/tetris', (req, res) => {
+	res.render('tetris');
+});
+
 const server = app.listen(3000, () => {
 	console.log("The server has started at port:" + server.address().port);
 });
