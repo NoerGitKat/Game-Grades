@@ -1,0 +1,51 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: url('../img/greengradient.jpg');
+	color: darkgreen;
+	font-family: Helvetica;
+}
+
+nav {
+	text-align: right;
+	margin-right: 20px;
+	margin-top: -130px;
+}
+
+nav ul {
+	background-color: limegreen;
+	display: inline-block;
+	width: 40%;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: darkgreen;
+	border: 1px solid darkgreen;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+a:hover {
+	background-color: limegreen;
+}
+
+.companyTitle h1 {
+	font-size: 100px;
+	margin: 30px;
+	display: inline-block;
+}
+
+
+footer h4 {
+	width: 30%;
+	margin: 0 auto;
+	border-top: 1px solid darkgreen;
+	padding-top: 20px;
+	text-align: center;
+}
