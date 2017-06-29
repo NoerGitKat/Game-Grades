@@ -1,0 +1,26 @@
+html
+	head
+		title Login
+		link(rel="stylesheet" href="../css/style.css")
+	body
+		.overallWrap
+			header
+				a(href="/").companyTitle
+					h1 Gamegrades
+					h3 Learning with videogames.
+				nav
+					ul
+						li
+							a(href= "/") Home
+						li
+							a(href='/login') Login
+						li
+							a(href='/about') About
+			
+			main
+				h1 Login here!
+				form#login(method="POST" action="/profile")
+					input(type="text" name="username" placeholder="Your username..." required)
+					br
+					br
+					input(type="password" name="password" placeholder="Your password" required)

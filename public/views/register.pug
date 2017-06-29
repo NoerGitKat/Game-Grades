@@ -24,6 +24,12 @@ html
 					h2 Please use the following form to register for a new account:
 					.form
 						form(method="post" action="/register")
+							label Username:
+							br
+							br
+							input.input(type="text" class="form-control" placeholder="Your username..." name="username" required)
+							br
+							br
 							label First name:
 							br
 							br
@@ -52,6 +58,10 @@ html
 							br
 							br
 							input.input(type="password" class="form-control" placeholder="Your password..." name="password" required)
+							br
+							br
+							label Do you like games?    
+							input.input(type="checkbox" name="checkbox" required)
 							br
 							br
 							button.submit(type="submit" class="btn-default") Submit

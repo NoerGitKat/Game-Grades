@@ -253,3 +253,5 @@ const player = {
 playerReset();
 updateScore();
 update();
+
+//http://thebeautifulbrain.com/2011/06/the-neuroscience-of-tetris/
