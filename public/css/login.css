@@ -1,0 +1,42 @@
+.login {
+	margin: 70px auto;
+	border-top: 1px solid darkgreen;
+	border-bottom: 1px solid darkgreen;
+	border-radius: 10px;
+	background-color: rgba(73, 155, 40, 0.2);
+	padding: 80px 200px;
+	width: 50%;
+}
+
+.login h1 {
+	font-size: 50px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.input {
+	padding: 10px;
+	border: 1px solid darkgreen;
+	border-radius: 10px;
+	font-size: 30px;
+}
+
+.input:focus {
+	background-color: lightgreen;
+}
+
+
+#login {
+	text-align: center;
+}
+
+.submit {
+	margin: 0;
+	margin-top: 10px;
+	padding: 10px;
+	background-color: green;
+	border: 1px solid darkgreen;
+	border-radius: 10px;
+	font-size: 30px;
+	cursor: pointer;
+}

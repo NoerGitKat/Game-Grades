@@ -2,6 +2,7 @@ html
 	head
 		title Login
 		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/login.css")
 	body
 		.overallWrap
 			header
@@ -18,9 +19,16 @@ html
 							a(href='/about') About
 			
 			main
-				h1 Login here!
-				form#login(method="POST" action="/profile")
-					input(type="text" name="username" placeholder="Your username..." required)
-					br
-					br
-					input(type="password" name="password" placeholder="Your password" required)
+				.login
+					h1 Login here!
+					form#login(method="POST" action="/login")
+						input.input(type="text" name="username" placeholder="Your username..." required)
+						br
+						br
+						input.input(type="password" name="password" placeholder="Your password" required)
+						br
+						br
+						input.submit(type="submit" name="submit" value="LOGIN!")
+
+			footer
+				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

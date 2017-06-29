@@ -79,8 +79,39 @@ app.get('/login', (req, res) => {
 	res.render('login');
 });
 
+app.post('/login', (req, res) => {
+	User.findOne({
+		where: {
+			username: req.body.username
+		}
+	})
+	.then((user) => {
+		var password = req.body.password
+		bcrypt.compare(password, user.password, (err, data) => {	//validate password
+			if (err) throw err;
+			if (user !== null && data == true) {
+				req.session.user = user;				//this starts session for user
+				res.redirect('/profile');
+			} 
+			else {
+				res.redirect('/login?message=' + encodeURIComponent("Invalid username or password."));
+			}
+		});
+	})
+	.catch((error) => {
+		res.redirect('/?message=' + encodeURIComponent('Error has occurred. Please check the server.'));
+	});
+});
+
 app.get('/profile', (req, res) => {
-	res.render('profile');
+	const user = req.session.user;
+	if(user){
+		res.render('profile', {
+			user: user
+		});
+	} else {
+		res.redirect('/login?message=' + encodeURIComponent('Please login to view your profile.'));
+	}
 });
 
 //Tetris Game Level 1
