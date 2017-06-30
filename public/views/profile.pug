@@ -1,6 +1,8 @@
 html
 	head
-		title #{user}'s profile
+		title #{user.username}'s profile
+		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/profile.css")
 	body
 		.overallWrap
 			header
@@ -10,11 +12,16 @@ html
 				nav
 					ul
 						li
-							a(href= "/") Home
+							a#logout(href='/logout') Logout
 						li
-							a(href='/login') Login
+							a(href='/class') Class
 						li
-							a(href='/about') Abo
+							a(href='/about') About
+						li
+							a(href='/resources') Resources
 		
 			main
 				h1 My personal profile
+
+			footer
+				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

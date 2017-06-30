@@ -5,6 +5,7 @@ const session = require('express-session');
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt-nodejs');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
 const db = new Sequelize('gamegrades', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
 	host: 'localhost',
 	dialect: 'postgres',
@@ -21,11 +22,11 @@ app.use(session({
 	saveUninitialized: false
 }));
 
+app.use(express.static("public"));
 app.use('/', bodyParser());
-
+app.use(fileUpload());
 app.set('views', 'public/views');
 app.set('view engine', 'pug');
-app.use(express.static("public"));
 
 //Models
 const User = db.define('user', {
@@ -44,11 +45,14 @@ const User = db.define('user', {
 	likesgames: Sequelize.BOOLEAN
 });
 
-db.sync({ force: true });
+db.sync({ force: false });
 
 //Routes
 app.get('/', (req, res) => {
-	res.render('index');
+	var user = req.session.user;
+	res.render('index', {
+		user: user
+	});
 });
 
 app.get('/register', (req, res) => {
@@ -104,19 +108,46 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/profile', (req, res) => {
-	const user = req.session.user;
-	if(user){
-		res.render('profile', {
-			user: user
-		});
-	} else {
-		res.redirect('/login?message=' + encodeURIComponent('Please login to view your profile.'));
-	}
+	var user = req.session.user;
+    if (user === undefined) {				//only accessible for logged in users
+        res.redirect('/login?message=' + encodeURIComponent("Please log in to view your profile."));
+    } else {
+        res.render('profile', {
+            user: user
+        });
+    }
+});
+
+//Log out route that redirects to home
+app.get('/logout', (req, res) => {
+	req.session.destroy(function(error) {			//destroy session after logout
+		if(error) {
+			throw error;
+		}
+		res.redirect('/?message=' + encodeURIComponent("Successfully logged out."));
+	});
 });
 
 //Tetris Game Level 1
 app.get('/tetris', (req, res) => {
 	res.render('tetris');
+});
+
+app.post('/upload', function(req, res) {
+	if (!req.files) {
+		return res.status(400).send('No files were uploaded.');
+	}
+ 
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file 
+  var sampleFile = req.files. + ;
+ 
+  // Use the mv() method to place the file somewhere on your server 
+  sampleFile.mv('/somewhere/on/your/server/filename.jpg', function(err) {
+    if (err)
+      return res.status(500).send(err);
+ 
+    res.send('File uploaded!');
+  });
 });
 
 //Quiz level 1
