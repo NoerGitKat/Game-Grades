@@ -29,7 +29,7 @@ app.set('views', 'public/views');
 app.set('view engine', 'pug');
 
 //Models
-const User = db.define('user', {
+var User = db.define('user', {
 	username: {
 		type: Sequelize.STRING,
 		unique: true
@@ -45,7 +45,7 @@ const User = db.define('user', {
 	likesgames: Sequelize.BOOLEAN
 });
 
-const Picture = db.define('picture', {
+var Picture = db.define('picture', {
 	picture: Sequelize.STRING
 })
 
@@ -178,6 +178,10 @@ app.post('/upload', function(req, res) {
 	}
     res.send('File uploaded!');
   });
+});
+
+app.get('/about', (req, res) => {
+	res.render('about');
 });
 
 //Quiz level 1

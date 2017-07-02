@@ -1,0 +1,51 @@
+html
+	head
+		title Home
+		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
+		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/about.css")
+
+	body
+		.overallWrap
+			header
+				if user
+					a(href="/").companyTitle
+						//- img(src="../img/gameboy.gif")
+						h1 Gamegrades
+						h3 Learning with videogames.
+					nav
+						ul
+							li
+								a(href="/logout") Logout
+							li
+								a(href="/class") Class
+							li
+								a(href="/profile") Profile
+							li
+								a(href="/resources") Resources
+				else
+					a(href="/").companyTitle
+						//- img(src="../img/gameboy.gif")
+						h1 Gamegrades
+						h3 Learning with videogames.
+					nav
+						ul
+							li
+								a(href="/") Home
+							li
+								a(href="/register") Register
+							li
+								a(href="/login") Login
+							li
+								a(href="/about") About
+
+			.container
+				main
+					h1 About Gamegrades
+					p Gamegrades devotes itself to the raising of public awareness on how videogames are actually awesome for you. By challenging yourself every once in a while, videogames can make you think differently about yourself, the world and life. And all this can be found in the comfort of your own home!
+
+
+
+
+				footer
+					h4 &copy; 2017 So Wow Inc. All Rights Reserved.
