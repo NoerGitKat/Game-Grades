@@ -45,7 +45,15 @@ const User = db.define('user', {
 	likesgames: Sequelize.BOOLEAN
 });
 
+const Picture = db.define('picture', {
+	picture: Sequelize.STRING
+})
+
 db.sync({ force: false });
+
+//Relationships
+User.hasOne(Picture);
+Picture.belongsTo(User);
 
 //Routes
 app.get('/', (req, res) => {
@@ -109,12 +117,21 @@ app.post('/login', (req, res) => {
 
 app.get('/profile', (req, res) => {
 	var user = req.session.user;
+
     if (user === undefined) {				//only accessible for logged in users
         res.redirect('/login?message=' + encodeURIComponent("Please log in to view your profile."));
     } else {
-        res.render('profile', {
-            user: user
-        });
+    	Picture.findOne({
+    		where: {
+    			userId: user.id
+    		}
+    	}).then((picture)=>{
+	        res.render('profile', {
+	            user: user,
+	            picture: picture
+	        });
+    	})
+    	.catch((error) => { console.log("Beep boop, error has occurred: " + error)})
     }
 });
 
@@ -130,22 +147,35 @@ app.get('/logout', (req, res) => {
 
 //Tetris Game Level 1
 app.get('/tetris', (req, res) => {
+	var user = req.session.user;
 	res.render('tetris');
 });
 
 app.post('/upload', function(req, res) {
+	console.log(req.files);
 	if (!req.files) {
 		return res.status(400).send('No files were uploaded.');
 	}
  
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file 
-  var sampleFile = req.files. + ;
+	let picture = req.files.picture;
+	let picturelink = `public/img/profile_pic/${user.id}.jpg`;
+	let databaseLink = `../img/profile/${user.id}.jpg`;
  
   // Use the mv() method to place the file somewhere on your server 
-  sampleFile.mv('/somewhere/on/your/server/filename.jpg', function(err) {
+  picture.mv(picturelink, function(err) {
     if (err)
       return res.status(500).send(err);
- 
+ 	else {
+ 		return Picture.create({
+ 			picture: databaseLink,
+ 			userId: user.id
+ 		})
+ 		.then(() => {
+ 			res.redirect('/profile');
+ 		})
+ 		.catch((error) => { console.log('Beep boop, error has occurred: ' + error) })
+	}
     res.send('File uploaded!');
   });
 });

@@ -1,6 +1,7 @@
 html
 	head
 		title #{user.username}'s profile
+		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
 		link(rel="stylesheet" href="../css/style.css")
 		link(rel="stylesheet" href="../css/profile.css")
 	body
@@ -22,6 +23,18 @@ html
 		
 			main
 				h1 My personal profile
-
+				if picture
+					.pic
+					img#profilepic(src=picture)
+				else
+					h3 Upload your profile picture
+					form#uploadPic(method="POST" action="/upload")
+						input.file(type="file" name="picture" enctype="multipart/form-data" required)
+						br
+						input.upload(type="submit" name="submit" value="Upload Profile Pic!")
+						br
+						.pic
+							img(src="../img/profile_pic/default.png")
+		
 			footer
 				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

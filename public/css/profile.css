@@ -1,0 +1,35 @@
+#uploadPic {
+	display: inline-block;
+	border-top: 1px solid darkgreen;
+	border-bottom: 1px solid darkgreen;
+	border-radius: 10px;
+	background-color: rgba(73, 155, 40, 0.2);
+	width: 30%;
+	height: 40%;
+}
+
+.file {
+	margin: 30px;
+	display: inline-block;
+}
+
+.upload {
+	margin-top: -30px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+.pic {
+	margin-top: 20px;
+	display: inline-block;
+	height: 70%;
+	width: 50%;
+	margin-left: 150px;
+}
+
+img {
+	display: inline-block;
+	border: 1px solid darkgreen;
+	height: 80%;
+	width: 80%;
+}
