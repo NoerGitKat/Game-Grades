@@ -184,15 +184,31 @@ app.get('/about', (req, res) => {
 	res.render('about');
 });
 
-app.get('/resources', (req, res) => {
-	res.render('about');
+app.get('/class', (req, res) => {
+	var user = req.session.user;
+
+	if(user) {
+		res.render('class');
+	} else {
+		res.redirect('/login?message=' + encodeURIComponent("Please log in to go to class."));
+	}
 });
 
-//Quiz level 1
-//Snake Game Level 2
-//Quiz level 2
-//Pacman Game level 3
-//Quiz level 3
+app.get('/resources', (req, res) => {
+	var user = req.session.user;
+	
+	if (user) {
+		res.render('resources',
+			{
+				user: user
+			});
+	} else {
+		res.redirect('/login?message=' + encodeURIComponent("Please log in to view resources."));
+	}
+	
+});
+
+
 
 const server = app.listen(3000, () => {
 	console.log("The server has started at port:" + server.address().port);

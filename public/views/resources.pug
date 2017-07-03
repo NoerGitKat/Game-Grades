@@ -1,0 +1,29 @@
+html
+	head
+		title #{user.username}'s profile
+		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
+		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/resources.css")
+	body
+		.overallWrap
+			header
+				nav
+					a(href="/").companyTitle
+						img(src="../img/gameboy.gif")
+						h1 Gamegrades
+						h3 Learning with videogames.
+					ul
+						li
+							a(href="/logout") Logout
+						li
+							a(href="/class") Class
+						li
+							a(href="/profile") Profile
+			
+			.container
+				main
+					h1 Resources
+
+
+			footer
+				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

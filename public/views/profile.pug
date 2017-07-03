@@ -12,26 +12,21 @@ html
 						img(src="../img/gameboy.gif")
 						h1 Gamegrades
 						h3 Learning with videogames.
-					br
-					br
 					ul
 						li
 							a(href="/logout") Logout
 						li
 							a(href="/class") Class
 						li
-							a(href="/profile") Profile
-						li
 							a(href="/resources") Resources
 		
 			main
-				if picture
-					.profile
+				.profile
+					if picture
 						h1 My personal profile
 						.pic
-						img#profilepic(src=picture)
-				else
-					.profile
+							img#profilepic(src=picture)
+					else
 						h3 Upload your profile picture
 						form#uploadPic(method="POST" action="/upload")
 							input.file(type="file" name="picture" enctype="multipart/form-data" required)
@@ -40,11 +35,12 @@ html
 							br
 							.pic
 								//- img(src="../img/profile_pic/default.png")
-
-			section
-				h1 Curriculum
-				p In the following video you'll go through the following process. First, you'll be presented with some scientific findings on the positive benefits of playing a videogame. Then you'll play the video game that the science was based on. Ultimately, you'll be tested on the knowledge you received. Have fun!
-				a(href="/tetris") Go!
+					.userinfo
+						h3 Username: #{user.username}
+						h3 First name: #{user.firstname}
+						h3 Last name: #{user.lastname}
+						h3 Age: #{user.age}
+						
 		
 			footer
 				h4 &copy; 2017 So Wow Inc. All Rights Reserved.
