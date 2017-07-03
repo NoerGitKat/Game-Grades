@@ -7,34 +7,44 @@ html
 	body
 		.overallWrap
 			header
-				a(href="/").companyTitle
-					h1 Gamegrades
-					h3 Learning with videogames.
 				nav
+					a(href="/").companyTitle
+						img(src="../img/gameboy.gif")
+						h1 Gamegrades
+						h3 Learning with videogames.
+					br
+					br
 					ul
 						li
-							a#logout(href='/logout') Logout
+							a(href="/logout") Logout
 						li
-							a(href='/class') Class
+							a(href="/class") Class
 						li
-							a(href='/about') About
+							a(href="/profile") Profile
 						li
-							a(href='/resources') Resources
+							a(href="/resources") Resources
 		
 			main
-				h1 My personal profile
 				if picture
-					.pic
-					img#profilepic(src=picture)
-				else
-					h3 Upload your profile picture
-					form#uploadPic(method="POST" action="/upload")
-						input.file(type="file" name="picture" enctype="multipart/form-data" required)
-						br
-						input.upload(type="submit" name="submit" value="Upload Profile Pic!")
-						br
+					.profile
+						h1 My personal profile
 						.pic
-							img(src="../img/profile_pic/default.png")
+						img#profilepic(src=picture)
+				else
+					.profile
+						h3 Upload your profile picture
+						form#uploadPic(method="POST" action="/upload")
+							input.file(type="file" name="picture" enctype="multipart/form-data" required)
+							br
+							input.upload(type="submit" name="submit" value="Upload Profile Pic!")
+							br
+							.pic
+								//- img(src="../img/profile_pic/default.png")
+
+			section
+				h1 Curriculum
+				p In the following video you'll go through the following process. First, you'll be presented with some scientific findings on the positive benefits of playing a videogame. Then you'll play the video game that the science was based on. Ultimately, you'll be tested on the knowledge you received. Have fun!
+				a(href="/tetris") Go!
 		
 			footer
 				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

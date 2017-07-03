@@ -8,6 +8,10 @@
 	height: 40%;
 }
 
+.profile {
+	
+}
+
 .file {
 	margin: 30px;
 	display: inline-block;
@@ -25,11 +29,4 @@
 	height: 70%;
 	width: 50%;
 	margin-left: 150px;
-}
-
-img {
-	display: inline-block;
-	border: 1px solid darkgreen;
-	height: 80%;
-	width: 80%;
 }

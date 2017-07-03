@@ -2,13 +2,13 @@
 	margin: 0;
 	padding: 0;
 	font-size: 45px;
-	color: lightgreen;
+	color: darkgrey;
 }
 
 .form {
-	border-top: 1px solid darkgreen;
-	border-bottom: 1px solid darkgreen;
-	background-color: rgba(73, 155, 40, 0.2);;
+	border-top: 1px solid darkgrey;
+	border-bottom: 1px solid darkgrey;
+	background-color: rgba(35, 130, 106, 0.2);
 	padding: 30px;
 	font-size: 20px;
 }
@@ -21,9 +21,21 @@
 }
 
 .input:focus {
-	background-color: lightgreen;
+	background-color: lightgrey;
 }
 
 .submit {
+	margin: 0;
+	margin-top: 10px;
+	padding: 10px;
+	background-color: grey;
+	border: 1px solid darkgrey;
+	border-radius: 10px;
+	font-size: 30px;
 	cursor: pointer;
+}
+
+.submit:hover {
+	color: white;
+	background-color: lightgrey;
 }

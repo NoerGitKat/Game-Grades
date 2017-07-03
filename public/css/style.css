@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: url('../img/greengradient.jpg');
+	background: url('../img/blocks.png');
 	background-size: 100% 100%;
 	color: white;
 	font-family: Helvetica;
@@ -11,47 +11,51 @@ body {
 	padding: 20px;
 }
 
-
-/*.container img {
-	text-align: center;
-	display: inline-block;
-	margin: 0 auto;
-	width: 80%;
-}*/
-
 nav {
-	text-align: right;
-	margin-right: 20px;
-	margin-top: -130px;
+	display: block;
+	padding: 20px;
+	margin: 0;
 }
 
-nav ul {
-	background-color: limegreen;
-	display: inline-block;
-	width: 40%;
+nav h1 {
+	font-size: 40px;
 }
 
 nav li {
+	list-style-type: none;
 	display: inline-block;
-	margin-right: 40px;
+	margin-left: 10px;
+	float: right;
 }
 
 a {
 	text-decoration: none;
-	color: darkgreen;
-	border: 1px solid darkgreen;
-	border-radius: 10px;
+	color: darkgrey;
+	border: 1px solid darkgrey;
 	padding: 10px;
 }
 
+nav li {
+	text-decoration: none;
+	color: white;
+	border-left: 1px solid darkgrey;
+	border-right: 1px solid darkgrey;
+	padding: 10px;
+}
+
+nav li a {
+	border: none;
+}
+
 a:hover {
-	background-color: limegreen;
+	color: lightgrey;
+	background-color: darkgrey;
 	color: white;
 }
 
 .companyTitle {
+	padding: 0;
 	display: inline-block;
-	margin-left: 30px;
 	border: none;
 	background-color: transparent;
 }
@@ -62,17 +66,25 @@ a:hover {
 }
 
 .companyTitle h1 {
-	color: lightgreen;
+	margin: 0;
+	padding-top: -30px;
+	color: #13514c;
 	font-size: 100px;
-	margin: 10px 40px 0 0;
 	display: inline-block;
 }
 
 .companyTitle h3 {
-	color: white;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 10px;
+	color: darkgrey;
 	text-align: right;
-	margin-top: -15px;
-	margin-bottom: 30px;
+}
+
+.companyTitle img {
+	display: inline-block;
+	height: 110px;
+	width: 110px;
 }
 
 .container {
@@ -87,10 +99,10 @@ footer {
 }
 
 footer h4 {
-	color: lightgreen;
+	color: darkgrey;
 	width: 30%;
 	margin: 0 auto;
-	border-top: 1px solid black;
+	border-top: 1px solid darkgrey;
 	padding-top: 20px;
 	text-align: center;
 }

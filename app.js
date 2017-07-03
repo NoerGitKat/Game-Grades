@@ -184,6 +184,10 @@ app.get('/about', (req, res) => {
 	res.render('about');
 });
 
+app.get('/resources', (req, res) => {
+	res.render('about');
+});
+
 //Quiz level 1
 //Snake Game Level 2
 //Quiz level 2
