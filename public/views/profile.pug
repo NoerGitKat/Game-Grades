@@ -34,13 +34,15 @@ html
 							input.upload(type="submit" name="submit" value="Upload Profile Pic!")
 							br
 							.pic
-								//- img(src="../img/profile_pic/default.png")
+								img(src="../img/profile_pic/default.png")
 					.userinfo
 						h3 Username: #{user.username}
 						h3 First name: #{user.firstname}
 						h3 Last name: #{user.lastname}
 						h3 Age: #{user.age}
-						
+						h3 Email: #{user.email}
+						h3 Likes games: #{user.likesgames}
+
 		
 			footer
 				h4 &copy; 2017 So Wow Inc. All Rights Reserved.
