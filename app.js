@@ -146,9 +146,14 @@ app.get('/logout', (req, res) => {
 });
 
 //Tetris Game Level 1
-app.get('/tetris', (req, res) => {
+app.get('/class/tetris', (req, res) => {
 	var user = req.session.user;
-	res.render('tetris');
+	if (user) {
+		res.render('tetris');
+	} else {
+		res.redirect('/login?message=' + encodeURIComponent("Please login to go to class."))
+	}
+	
 });
 
 app.post('/upload', function(req, res) {
@@ -208,6 +213,30 @@ app.get('/resources', (req, res) => {
 	
 });
 
+app.get('/class/quiz', (req, res) => {
+	var user = req.session.user;
+
+	if (user) {
+		res.render('quiz',
+		{
+			user: user
+		});
+	} else {
+		res.redirect('/login?message=' + encodeURIComponent("Please login to go to class."));
+	}
+});
+
+app.get('/class/science', (req,res) => {
+	var user = req.session.user;
+
+	if (user) {
+		res.render('science', {
+			user: user
+		})
+	} else {
+		res.redirect('/login?message=' + encodeURIComponent("Please login to go to class."));
+	}
+});
 
 
 const server = app.listen(3000, () => {
