@@ -2,33 +2,15 @@ html
 	head
 		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
 		title Tetris
-		style.
-			h3 {
-				margin-top: 50px;
-				display: inline-block;
-			}
-			#score {
-				padding: 0 10px;
-				border: 1px solid black;
-				border-radius: 10px;
-				display: inline-block;
-			}
-			body {
-				background: url('../img/pizzawormhole.gif') no-repeat;
-				background-size: 100% 120%;
-				color: black;
-				font-family: Helvetica;
-				font-size: 30px;
-				text-align: center;
-			}
-			canvas {
-				border: solid 2px #fff;
-				height: 75%;
-			}
-
+		link(rel='stylesheet' href='../css/tetris.css')
+		
 	body
 		h3 Your score is: 
 			#score
 		br
 		canvas#tetris(width='240', height='400')
 			script(src='../js/tetris.js')
+		a#proceed(href="/class/quiz") To quiz!
+		script(src='../js/jquery-3.2.1.min.js')
+		script.
+			$('#proceed').hide(0).delay(30000).show(0);

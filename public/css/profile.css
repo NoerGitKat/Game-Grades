@@ -34,7 +34,23 @@
 }
 
 .userinfo {
+	margin: 50px 50px;
 	display: inline-block;
-	margin-left: 40px;
-	margin-bottom: 100px;
+	padding-left: 20px;
+	border-left: 1px solid darkgrey;
+}
+
+.profile h1 {
+	display: inline-block;
+	margin-left: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid darkgrey
+}
+
+#profilepicture {
+	display: inline-block;
+	margin: 0 40px 70px;;
+	border: 5px solid darkgrey;
+	height: 50%;
+	width: 20%;
 }

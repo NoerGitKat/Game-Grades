@@ -49,7 +49,7 @@ var Picture = db.define('picture', {
 	imageName: Sequelize.STRING
 })
 
-db.sync({ force: true });
+db.sync({ force: false });
 
 //Relationships
 User.hasOne(Picture);
