@@ -1,0 +1,1 @@
+This is a web app, showcasing the glory that is tetris. It aims to show good science on how playing Tetris a couple of hours after experiencing a traumatic event can help an individual process the experience much better. It's made with Node.js, the templating engine Pug and HTML5.
