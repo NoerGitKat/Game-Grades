@@ -4,6 +4,27 @@ html
 		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
 		link(rel="stylesheet" href="../css/style.css")
 		link(rel="stylesheet" href="../css/profile.css")
+		style.
+			.profile h1 {
+				display: inline-block;
+				margin-left: 20px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid darkgrey
+			}
+			#profilepicture {
+				display: inline-block;
+				margin: 0 40px 70px;;
+				border: 5px solid darkgrey;
+				height: 50%;
+				width: 20%;
+			}
+			.userinfo {
+				margin-top: 50px;
+				margin-right: 30px;
+				display: inline-block;
+				padding-left: 20px;
+				border-left: 1px solid darkgrey;
+			}
 	body
 		.overallWrap
 			header
@@ -22,19 +43,17 @@ html
 		
 			main
 				.profile
+					h1 #{user.firstname}'s Profile
+					br
+					br
 					if picture
-						h1 My personal profile
-						.pic
-							img#profilepic(src=picture)
+						img(id="profilepicture" src=picture.imageName)
 					else
-						h3 Upload your profile picture
-						form#uploadPic(method="POST" action="/upload")
-							input.file(type="file" name="picture" enctype="multipart/form-data" required)
-							br
-							input.upload(type="submit" name="submit" value="Upload Profile Pic!")
-							br
-							.pic
-								img(src="../img/profile_pic/default.png")
+						.upload
+							form(method="post" action="/upload" encType="multipart/form-data")
+								input(type='file' name="picture" accept="image/*" required)
+								br
+								input.uploading(type='submit' value="Load up your image")
 					.userinfo
 						h3 Username: #{user.username}
 						h3 First name: #{user.firstname}

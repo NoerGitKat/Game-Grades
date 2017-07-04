@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const Sequelize = require('sequelize');
+const fileUpload = require('express-fileupload');
 const bcrypt = require('bcrypt-nodejs');
 const bodyParser = require('body-parser');
-const fileUpload = require('express-fileupload');
 const db = new Sequelize('gamegrades', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
 	host: 'localhost',
 	dialect: 'postgres',
@@ -24,8 +24,8 @@ app.use(session({
 
 app.use(express.static("public"));
 app.use('/', bodyParser());
-app.use(fileUpload());
 app.set('views', 'public/views');
+app.use(fileUpload());
 app.set('view engine', 'pug');
 
 //Models
@@ -46,10 +46,10 @@ var User = db.define('user', {
 });
 
 var Picture = db.define('picture', {
-	picture: Sequelize.STRING
+	imageName: Sequelize.STRING
 })
 
-db.sync({ force: false });
+db.sync({ force: true });
 
 //Relationships
 User.hasOne(Picture);
@@ -105,7 +105,7 @@ app.post('/login', (req, res) => {
 				req.session.user = user;				//this starts session for user
 				res.redirect('/profile');
 			} 
-			else {
+			else if (req.body.username !== user.username || req.body.password !== user.username) {
 				res.redirect('/login?message=' + encodeURIComponent("Invalid username or password."));
 			}
 		});
@@ -156,33 +156,29 @@ app.get('/class/tetris', (req, res) => {
 	
 });
 
-app.post('/upload', function(req, res) {
-	console.log(req.files);
-	if (!req.files) {
-		return res.status(400).send('No files were uploaded.');
-	}
- 
-  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file 
-	let picture = req.files.picture;
-	let picturelink = `public/img/profile_pic/${user.id}.jpg`;
-	let databaseLink = `../img/profile/${user.id}.jpg`;
- 
-  // Use the mv() method to place the file somewhere on your server 
-  picture.mv(picturelink, function(err) {
-    if (err)
-      return res.status(500).send(err);
- 	else {
- 		return Picture.create({
- 			picture: databaseLink,
- 			userId: user.id
- 		})
- 		.then(() => {
- 			res.redirect('/profile');
- 		})
- 		.catch((error) => { console.log('Beep boop, error has occurred: ' + error) })
-	}
-    res.send('File uploaded!');
-  });
+app.post('/upload', (req, res) => {
+	var user = req.session.user;
+	if(!req.files) {
+			return res.status(400).send('No files were uploaded.');
+		} else {
+			let picture= req.files.picture
+			let picturelink= `public/img/profile_pic/${user.id}.jpg`
+			let databaseLink= `../img/profile_pic/${user.id}.jpg`
+			picture.mv(picturelink, (err)=>{
+				if (err) {
+					throw err
+				} else {	
+					return Picture.create({
+						imageName: databaseLink,
+						userId: user.id
+					})
+					.then(()=>{
+						res.redirect('/profile');
+					})
+					.catch((error) => { console.log("Beep boop, an error has occurred: " + error) });
+				}
+			})
+		}	
 });
 
 app.get('/about', (req, res) => {
@@ -197,6 +193,7 @@ app.get('/class', (req, res) => {
 	} else {
 		res.redirect('/login?message=' + encodeURIComponent("Please log in to go to class."));
 	}
+
 });
 
 app.get('/resources', (req, res) => {
