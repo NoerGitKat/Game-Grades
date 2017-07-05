@@ -6,3 +6,23 @@
 	padding: 30px;
 	font-size: 20px;
 }
+
+h3 {
+	color: darkgrey;
+}
+
+.quiz {
+	margin: 0 auto;
+	width: 80%;
+	border-radius: 10px;
+	border-top: 1px solid darkgrey;
+	border-bottom: 1px solid darkgrey;
+	background-color: rgba(71, 247, 215, 0.2);
+}
+
+#results {
+	background-color: yellow;
+	color: black;
+	width: 90%;
+	margin: 0 auto;
+}

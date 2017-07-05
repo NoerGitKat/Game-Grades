@@ -22,9 +22,62 @@ html
 			
 			.container 
 				main
-					h1 Quiz Time!
-					form(onsubmit="return submitAnswers()" name="quiz")
-						h3 
+					#results
+					img(src="../img/quiz.gif")
+					br
+					br
+					.quiz
+						form(onsubmit="return submitAnswers()" name="quiz")
+							h3 With which mental disorder can playing Tetris help alleviate? 
+							input(type="radio" name="q1" id="q1a") 
+							|Post Traumatic Stress Disorder (PTSD)
+							br
+							input(type="radio" name="q1" id="q1b") 
+							|Schizophrenia
+							br
+							input(type="radio" name="q1" id="q1c") 
+							|Social Anxiety Disorder
+							br
+							//- PTSD
+
+							h3 On average, up to how many hours after a traumatic event would playing Tetris be of benefit?
+							input(type="radio" name="q2" id="q2a") 
+							|4
+							br
+							input(type="radio" name="q2" id="q2b") 
+							|5
+							br
+							input(type="radio" name="q2" id="q2c") 
+							|6
+							br
+							//- 6 Hours
+
+							h3 What is the reason for why playing Tetris works as a therapeutic tool?
+							input(type="radio" name="q3" id="q3a") 
+							|It's so visually stimulating that it prevents the brain from concentrating on the trauma, thus processing the event as less traumatic.
+							br
+							input(type="radio" name="q3" id="q3b") 
+							|The way the blocks move into each other creates a chain reaction in the brain: the events will find a 'proper place' to store the experience in.
+							br
+							input(type="radio" name="q3" id="q3c") 
+							|The blocks remind you of your childhood, when you used to play with blocks. This creates a positive association in the brain, between how you feel now and how you felt then. This is based on your autobiographical memory. 
+							br
+
+							//-  Visual pattern-matching games like Tetris (and Candy Crush Saga, Bejeweled, etc) are so visually absorbing, they prevent your brain from concentrating on what you saw, and therefore block your brain from forming long-term visual memories of the trauma. You will still be able to recall all of the details of what happened, but you are less likely to suffer unwanted flashbacks. ONLY visual pattern-matching games like Tetris are expected to help. Other types of games (such as racing games or first-person shooters) are not likely to help, and some games (such as trivia quizzes) may even increase flashbacks.
+
+							h3 Is Tetris the best arcade retrogame ever?
+							input(type="radio" name="q4" id="q4a") 
+							|YEAHHHH
+							br
+							input(type="radio" name="q4" id="q4b") 
+							|HECK YEAHHH
+							br
+							input(type="radio" name="q4" id="q4c") 
+							|HELLZZ YEAHHHH
+							br
+							br
+							//- HELLZ YEAH
+							input(type="submit" value="Submit Answers!")
 
 			footer
 				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

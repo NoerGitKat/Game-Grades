@@ -235,6 +235,18 @@ app.get('/class/science', (req,res) => {
 	}
 });
 
+app.get('/class/congrats' , (req, res) => {
+	var user = req.session.user;
+
+	if (user) {
+		res.render('congrats', {
+			user: user
+		})
+	} else {
+		res.redirect('/login?message=' + encodeURIComponent("Please log in to go to class."));
+	}
+});
+
 
 const server = app.listen(3000, () => {
 	console.log("The server has started at port:" + server.address().port);
