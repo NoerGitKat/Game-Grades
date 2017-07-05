@@ -10,7 +10,10 @@ html
 		br
 		canvas#tetris(width='240', height='400')
 			script(src='../js/tetris.js')
+		audio.audio(autoplay loop controls='')
+			source(src='../audio/tetris.mp3', type='audio/mpeg')
 		a#proceed(href="/class/quiz") To quiz!
 		script(src='../js/jquery-3.2.1.min.js')
 		script.
 			$('#proceed').hide(0).delay(30000).show(0);
+			$('.audio').hide(0);

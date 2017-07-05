@@ -219,7 +219,7 @@ app.get('/class/quiz', (req, res) => {
 			user: user
 		});
 	} else {
-		res.redirect('/login?message=' + encodeURIComponent("Please login to go to class."));
+		res.redirect('/login?message=' + encodeURIComponent("Please log in to go to class."));
 	}
 });
 
@@ -231,7 +231,7 @@ app.get('/class/science', (req,res) => {
 			user: user
 		})
 	} else {
-		res.redirect('/login?message=' + encodeURIComponent("Please login to go to class."));
+		res.redirect('/login?message=' + encodeURIComponent("Please log in to go to class."));
 	}
 });
 
