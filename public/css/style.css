@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: url('../img/blocks.png');
+	background: url('../img/black.gif');
 	background-size: 100% 100%;
 	color: white;
 	font-family: Helvetica;
@@ -34,7 +34,7 @@ nav li {
 
 a {
 	text-decoration: none;
-	color: darkgrey;
+	color: white;
 	border: 1px solid darkgrey;
 	padding: 10px;
 }
