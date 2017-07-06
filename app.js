@@ -42,14 +42,15 @@ var User = db.define('user', {
     },
 	age: Sequelize.INTEGER,
 	password: Sequelize.STRING,
-	likesgames: Sequelize.BOOLEAN
+	likesgames: Sequelize.BOOLEAN,
+	likesscience: Sequelize.BOOLEAN
 });
 
 var Picture = db.define('picture', {
 	imageName: Sequelize.STRING
 })
 
-db.sync({ force: false });
+db.sync({ force: false });	//set to true to wipe db
 
 //Relationships
 User.hasOne(Picture);
@@ -69,18 +70,19 @@ app.get('/register', (req, res) => {
 
 app.post('/register', (req, res) => {
 	var password = req.body.password;
-	bcrypt.hash(password, null, null, (err, hash) => {
+	bcrypt.hash(password, null, null, (err, hash) => {		//Hashing for security
 		if (err) {
 			throw err
 		}
-		User.create({
+		User.create({							//Creates new row in users
 			username: req.body.username,
 			firstname: req.body.firstname,
 			lastname: req.body.lastname,
 			email: req.body.email,
 			age: req.body.age,
 			password: hash,
-			likesgames: req.body.checkbox
+			likesgames: req.body.checkbox,
+			likesscience: req.body.checkbox2
 		})
 	})
 	res.redirect('/login');
@@ -92,7 +94,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-	User.findOne({
+	User.findOne({							//look for user in db
 		where: {
 			username: req.body.username
 		}
@@ -148,28 +150,27 @@ app.get('/logout', (req, res) => {
 //Tetris Game Level 1
 app.get('/class/tetris', (req, res) => {
 	var user = req.session.user;
-	if (user) {
+	if (user) {						//only accessible for users
 		res.render('tetris');
 	} else {
 		res.redirect('/login?message=' + encodeURIComponent("Please login to go to class."))
 	}
-	
 });
 
 app.post('/upload', (req, res) => {
-	var user = req.session.user;
+	var user = req.session.user;		//relevant for creating userId
 	if(!req.files) {
 			return res.status(400).send('No files were uploaded.');
 		} else {
 			let picture= req.files.picture
-			let picturelink= `public/img/profile_pic/${user.id}.jpg`
-			let databaseLink= `../img/profile_pic/${user.id}.jpg`
-			picture.mv(picturelink, (err)=>{
+			let dirPic= `public/img/profile_pic/${user.id}.jpg`
+			let namePic= `../img/profile_pic/${user.id}.jpg`
+			picture.mv(dirPic, (err)=>{
 				if (err) {
 					throw err
 				} else {	
-					return Picture.create({
-						imageName: databaseLink,
+					return Picture.create({			//creates picture with link to user
+						imageName: namePic,
 						userId: user.id
 					})
 					.then(()=>{
@@ -188,7 +189,7 @@ app.get('/about', (req, res) => {
 app.get('/class', (req, res) => {
 	var user = req.session.user;
 
-	if(user) {
+	if(user) {					//only accessible for users
 		res.render('class');
 	} else {
 		res.redirect('/login?message=' + encodeURIComponent("Please log in to go to class."));
@@ -196,24 +197,10 @@ app.get('/class', (req, res) => {
 
 });
 
-app.get('/resources', (req, res) => {
-	var user = req.session.user;
-	
-	if (user) {
-		res.render('resources',
-			{
-				user: user
-			});
-	} else {
-		res.redirect('/login?message=' + encodeURIComponent("Please log in to view resources."));
-	}
-	
-});
-
 app.get('/class/quiz', (req, res) => {
 	var user = req.session.user;
 
-	if (user) {
+	if (user) {					//only accessible for users
 		res.render('quiz',
 		{
 			user: user
@@ -226,7 +213,7 @@ app.get('/class/quiz', (req, res) => {
 app.get('/class/science', (req,res) => {
 	var user = req.session.user;
 
-	if (user) {
+	if (user) {					//only accessible for users
 		res.render('science', {
 			user: user
 		})
@@ -238,7 +225,7 @@ app.get('/class/science', (req,res) => {
 app.get('/class/congrats' , (req, res) => {
 	var user = req.session.user;
 
-	if (user) {
+	if (user) {					//only accessible for users
 		res.render('congrats', {
 			user: user
 		})

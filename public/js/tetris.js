@@ -4,7 +4,7 @@ const context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
-
+//If arena is full, start anew
 function arenaSweep() {
     let rowCount = 1;
     outer: for (let y = arena.length -1; y > 0; --y) {
@@ -231,6 +231,7 @@ document.addEventListener('keydown', event => {
     }
 });
 
+//keep colors for blocks in one place
 const colors = [
     null,
     '#FF0D72',
@@ -242,6 +243,7 @@ const colors = [
     '#3877FF',
 ];
 
+//draws matrix
 const arena = createMatrix(12, 20);
 
 const player = {
@@ -250,6 +252,7 @@ const player = {
     score: 0,
 };
 
+//Make tetris real-time
 playerReset();
 updateScore();
 update();

@@ -43,18 +43,11 @@ main {
 .userinfo {
 	position: absolute;
 	left: 1000px;
-	bottom: 50px;
+	bottom: 35px;
 	display: inline-block;
 	padding-left: 20px;
 	border-left: 1px solid darkgrey;
 }
-
-/*.profile h1 {
-	display: inline-block;
-	margin: 0 auto;
-	padding-bottom: 5px;
-	border-bottom: 1px solid darkgrey
-}*/
 
 #profilepicture {
 	display: inline-block;
@@ -62,4 +55,5 @@ main {
 	border: 5px solid darkgrey;
 	height: 80%;
 	width: 20%;
+	border-radius: 150px;
 }
