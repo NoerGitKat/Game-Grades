@@ -1,5 +1,6 @@
 html
 	head
+		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
 		title YAY! Congrats!
 		link(rel="stylesheet" href="../css/congrats.css")
 		script(src="../js/jquery-3.2.1.min.js")
@@ -26,10 +27,16 @@ html
 		script.
 			$('.audio').hide(0);
 
-			$( ".cat2" ).animate({
-				left: "+=40px"
-			}, 3000);
+			function loopCat2() {
+				$( ".cat2" ).animate({
+					left: "20%"
+				}, 5000);
+				$( ".cat2" ).animate({
+					left: "0"
+				}, 5000);
+				loopCat2();
+			}
 
-			$( ".cat2" ).animate({
-				left: "+-=40px"
-			}, 3000);
+			loopCat2();
+
+			

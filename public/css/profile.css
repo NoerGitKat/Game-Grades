@@ -21,6 +21,7 @@ main {
 }
 
 .profile h2 {
+	display: inline-block;
 	position: absolute;
 	top: 400px;
 	left: 430px;
