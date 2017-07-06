@@ -18,23 +18,23 @@ html
 						li
 							a(href="/logout") Logout
 						li
-							a(href="/class") Class
+							a.current(href="/profile") Profile
 						li
-							a(href="/resources") Resources
+							a(href="/class") Class
 		
 			main
 				.profile
-					h1 #{user.firstname}'s Profile
-					br
-					br
 					if picture
 						img(id="profilepicture" src=picture.imageName)
 					else
 						.upload
+							h4 Upload a profile picture
 							form(method="post" action="/upload" encType="multipart/form-data")
 								input(type='file' name="picture" accept="image/*" required)
 								br
 								input.uploading(type='submit' value="Load up your image")
+
+					h2 Welcome to your amazing profile, #{user.firstname}!
 									
 					.userinfo
 						h3 Username: #{user.username}
@@ -42,7 +42,7 @@ html
 						h3 Last name: #{user.lastname}
 						h3 Age: #{user.age}
 						h3 Email: #{user.email}
-						h3 Likes games: #{user.likesgames}
+						h3 Likes games: OF COURSE!!!
 
 		
 			footer

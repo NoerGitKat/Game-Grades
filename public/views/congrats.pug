@@ -25,7 +25,11 @@ html
 
 		script.
 			$('.audio').hide(0);
-			//- $( ".cat2" ).animate({
-			//- 	left: "30px"
-			//- 	}, 3000
-			//- );
+
+			$( ".cat2" ).animate({
+				left: "+=40px"
+			}, 3000);
+
+			$( ".cat2" ).animate({
+				left: "+-=40px"
+			}, 3000);

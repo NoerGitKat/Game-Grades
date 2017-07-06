@@ -7,6 +7,10 @@ body {
 	font-family: Helvetica;
 }
 
+.current {
+	background-color: grey;
+}
+
 .overallWrap {
 	padding: 20px;
 }
