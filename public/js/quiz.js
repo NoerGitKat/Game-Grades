@@ -29,8 +29,13 @@ function submitAnswers() {
 	};
 
 	//display results
-	var results = document.getElementById('results');
-	results.innerHTML = "You scored " + score + " out of " + total + "!" + " Click to get your AWARD!!!";
+	var resultsB = document.getElementById('resultsBad');
+	var resultsG = document.getElementById('resultsGood');
+	if(score >= 2) {
+		resultsG.innerHTML = "You scored " + score + " out of " + total + "!" + " Click to get your AWARD!!!";
+	} else {
+		resultsB.innerHTML = "You scored " + score + " out of " + total + "!" + " You should pay better attention, buster!";
+	}
 
 	return false;
 };

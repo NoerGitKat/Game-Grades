@@ -7,7 +7,6 @@
 	background-color: transparent;
 }
 
-
 .container {
 	border-radius: 10px;
 	border-top: 1px solid darkgrey;
@@ -30,7 +29,7 @@ h3 {
 	background-color: rgba(71, 247, 215, 0.2);
 }
 
-#results {
+#resultsGood, #resultsBad {
 	background-color: grey;
 	color: black;
 	width: 90%;
