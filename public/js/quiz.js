@@ -20,15 +20,17 @@ function submitAnswers() {
 	//Setting the correct answers
 	var correctA = ['a', 'c', 'a', 'c'];
 	for (var i = 0; i < correctA.length; i++) {
-		if (arrayQ[i] === correctA[i]) {
+		if (arrayQ[i] == correctA[i]) {
+			alert("Question " + (i + 1) + " is correct!");
 			score++;
-			console.log("Your score now is: " + score);
+		} else {
+			alert("Question " + (i + 1) + " is WRONGGGGG!");
 		}
 	};
 
 	//display results
 	var results = document.getElementById('results');
-	results.innerHTML = "h3 You scored " + score + " out of " + total + "!";
+	results.innerHTML = "You scored " + score + " out of " + total + "!" + " Click to get your AWARD!!!";
 
 	return false;
 };
