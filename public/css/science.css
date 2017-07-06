@@ -1,3 +1,15 @@
+.science {
+	border: none;
+	padding: 0;
+	color: #818484;
+}
+
+.science:hover {
+	background-color: transparent;
+	padding: 0;
+	color: #acafaf;
+}
+
 .container h1 {
 	margin: 0;
 	padding: 0;
