@@ -39,3 +39,8 @@
 	color: white;
 	background-color: lightgrey;
 }
+
+label {
+	padding-bottom: 200px;
+	font-size: 30px;
+}

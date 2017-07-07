@@ -14,11 +14,28 @@
 	margin-bottom: 20px;
 }
 
-.input {
+.input1 {
+	text-align: center;
 	padding: 10px;
 	border: 1px solid darkgrey;
 	border-radius: 10px;
 	font-size: 30px;
+	margin-top: -3px;
+}
+
+.input2 {
+	text-align: center;
+	padding: 10px;
+	border: 1px solid darkgrey;
+	border-radius: 10px;
+	font-size: 30px;
+	margin-top: -3px;
+}
+
+.icon {
+	position: absolute;
+	height: 8%;
+	left: 510px;
 }
 
 .input:focus {
