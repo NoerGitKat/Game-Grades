@@ -31,13 +31,6 @@ nav h1 {
 	font-size: 40px;
 }
 
-nav li {
-	list-style-type: none;
-	display: inline-block;
-	margin-left: 10px;
-	float: right;
-}
-
 a {
 	font-family: DigitalTech;
 	text-decoration: none;
@@ -52,6 +45,10 @@ nav li {
 	border-left: 1px solid darkgrey;
 	border-right: 1px solid darkgrey;
 	padding: 10px;
+	list-style-type: none;
+	display: inline-block;
+	margin-left: 10px;
+	float: right;
 }
 
 nav li a {
