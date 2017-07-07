@@ -16,10 +16,11 @@ html
 					ul
 						li
 							a(href="/logout") Logout
+						li 
+							a(href="/profile") Profile
 						li
 							a.current(href="/class") Class
-						li
-							a(href="/resources") Resources
+
 			
 			.container 
 				main
@@ -27,9 +28,8 @@ html
 						#resultsBad
 					a.nextpage(href="/class/congrats")
 						#resultsGood
-					img(src="../img/quiz.gif")
-					br
-					br
+					h1 Quiz Time!
+					//- img(src="../img/quiz.gif")
 					.quiz
 						form(onsubmit="return submitAnswers()" name="quiz")
 							h3 With which mental disorder can playing Tetris help alleviate? 

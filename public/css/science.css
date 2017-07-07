@@ -2,6 +2,11 @@
 	border: none;
 	padding: 0;
 	color: #818484;
+	font-family: Helvetica;
+}
+
+h1 {
+	font-family: DigitalTech;
 }
 
 .science:hover {

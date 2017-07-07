@@ -1,3 +1,8 @@
+@font-face {
+	font-family: DigitalTech;
+	src: url(../fonts/Digital_tech.otf);
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -16,6 +21,7 @@ body {
 }
 
 nav {
+	font-family: DigitalTech;
 	display: block;
 	padding: 20px;
 	margin: 0;
@@ -33,6 +39,7 @@ nav li {
 }
 
 a {
+	font-family: DigitalTech;
 	text-decoration: none;
 	color: white;
 	border: 1px solid darkgrey;
@@ -52,9 +59,8 @@ nav li a {
 }
 
 a:hover {
-	color: lightgrey;
-	background-color: darkgrey;
 	color: white;
+	background-color: darkgrey;
 }
 
 .companyTitle {
@@ -80,8 +86,10 @@ a:hover {
 }
 
 .companyTitle h3 {
+	font-family: Helvetica;
 	padding: 0;
 	margin: 0;
+	margin-top: -10px;
 	margin-bottom: 10px;
 	color: darkgrey;
 	text-align: right;
