@@ -1,26 +1,40 @@
 html
 	head
 		title Login
+		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
 		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/login.css")
 	body
 		.overallWrap
 			header
-				a(href="/").companyTitle
-					h1 Gamegrades
-					h3 Learning with videogames.
 				nav
+					a(href="/").companyTitle
+						img(src="../img/gameboy.gif")
+						h1 Gamegrades
+						h3 Learning with videogames.
 					ul
 						li
-							a(href= "/") Home
+							a(href="/") Home
 						li
-							a(href='/login') Login
+							a.current(href="/login") Login
 						li
-							a(href='/about') About
+							a(href="/register") Register
+						li
+							a(href="/about") About
 			
 			main
-				h1 Login here!
-				form#login(method="POST" action="/profile")
-					input(type="text" name="username" placeholder="Your username..." required)
-					br
-					br
-					input(type="password" name="password" placeholder="Your password" required)
+				.login
+					h1 Login here!
+					form#login(method="POST" action="/login")
+						input.input1(type="text" name="username" placeholder="Your username..." required)
+						img.icon(src="../img/user.png")
+						br
+						br
+						input.input2(type="password" name="password" placeholder="Your password..." required)
+						img.icon(src="../img/password.png")
+						br
+						br
+						input.submit(type="submit" name="submit" value="Login")
+
+			footer
+				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

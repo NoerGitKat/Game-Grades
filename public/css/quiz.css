@@ -1,0 +1,49 @@
+.nextpage {
+	display: inline-block;
+	border: none;
+	height: 0;
+}
+
+.nextpage:hover {
+	background-color: transparent;
+}
+
+h1 {
+	font-family: DigitalTech;
+	font-size: 60px;
+	margin-bottom: 20px;
+}
+
+.container {
+	border-radius: 10px;
+	border-top: 1px solid darkgrey;
+	border-bottom: 1px solid darkgrey;
+	background-color: rgba(35, 130, 106, 0.2);
+	padding: 30px;
+	font-size: 20px;
+}
+
+h3 {
+	color: darkgrey;
+	font-family: DigitalTech;
+}
+
+.quiz {
+	margin: 0 auto;
+	width: 80%;
+	border-radius: 10px;
+	border-top: 1px solid darkgrey;
+	border-bottom: 1px solid darkgrey;
+	background-color: rgba(71, 247, 215, 0.2);
+}
+
+#resultsGood, #resultsBad {
+	background-color: grey;
+	color: black;
+	width: 90%;
+	margin: 0 auto;
+}
+
+img {
+	margin-top: 0;
+}

@@ -1,25 +1,30 @@
-
 #register {
 	margin-top: 400px;
 }
 
 .container {
 	text-align: center;
-	margin: 80px auto;
+	margin: 30px auto;
 	padding: 10px;
 	width: 80%;
 	font-size: 30px;
 }
 
 .container h1 {
-	color: lightgreen;
+	color: darkgrey;
 }
 
 .container iframe {
-	border-top: 1px solid darkgreen;
-	border-bottom: 1px solid darkgreen;
+	margin-top: 30px;
+	border-top: 1px solid darkgrey;
+	border-bottom: 1px solid darkgrey;
 	border-radius: 10px;
-	background-color: rgba(73, 155, 40, 0.2);
+	background-color: rgba(35, 130, 106, 0.2);
 	padding: 80px 200px;
 	width: 50%;
+}
+
+img {
+	height: 60%;
+	width:80%;
 }

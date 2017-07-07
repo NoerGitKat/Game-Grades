@@ -1,0 +1,79 @@
+html
+	head
+		title About
+		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
+		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/about.css")
+		style.
+			#map {
+				margin: 0 auto 20;
+				width: 70%;
+				height: 400px;
+				background-color: grey;
+			}
+	body
+		.overallWrap
+			header
+				if user
+					nav
+						a(href="/").companyTitle
+							img(src="../img/gameboy.gif")
+							h1 Gamegrades
+							h3 Learning with videogames.
+						ul
+							li
+								a(href="/logout") Logout
+							li
+								a(href="/class") Class
+							li
+								a(href="/profile") Profile
+				else
+					nav
+						a(href="/").companyTitle
+							img(src="../img/gameboy.gif")
+							h1 Gamegrades
+							h3 Learning with videogames.
+						ul
+							li
+								a(href="/") Home
+							li
+								a(href="/login") Login
+							li
+								a(href="/register") Register
+							li
+								a.current(href="/about") About
+
+			.container
+				main
+					h1 About Gamegrades
+					p Gamegrades devotes itself to raising public awareness on how videogames are actually awesome for you. By challenging yourself every once in a while, videogames can make you think differently about yourself, the world and life. And all this can be done in the comfort of your own home!
+
+					h1 Where to find us
+					p Want to send us a surprise support gift, because yolo? Excited to shake our gamerhands in real life? Or do you just want to send positive vibes to our location? Reach us at the following address:
+
+					.address
+						li Idiotville, Idiotcity
+						li 12345NZA Idiotland
+					br
+					br
+
+					#map
+					script.
+						function initMap() {
+						var idiotville = {lat: 44.735466 , lng:-79.879813};
+
+						var map = new google.maps.Map(document.getElementById('map'), {
+						zoom: 18,
+						center: idiotville
+						});
+
+						var marker = new google.maps.Marker({
+						position: idiotville,
+						map: map
+						});
+
+						}
+					script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDAwU7fj7G8K4z_2_ry0FnO20CbmFBQCbE&callback=initMap')
+
+			footer
+				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

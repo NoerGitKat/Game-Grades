@@ -1,0 +1,50 @@
+html
+	head
+		title #{user.username}'s profile
+		link(rel='shortcut icon', href='../img/oldschoolcontroller2.ico', type='image/x-icon')
+		link(rel="stylesheet" href="../css/style.css")
+		link(rel="stylesheet" href="../css/profile.css")
+		style.
+
+	body
+		.overallWrap
+			header
+				nav
+					a(href="/").companyTitle
+						img(src="../img/gameboy.gif")
+						h1 Gamegrades
+						h3 Learning with videogames.
+					ul
+						li
+							a(href="/logout") Logout
+						li
+							a.current(href="/profile") Profile
+						li
+							a(href="/class") Class
+		
+			main
+				.profile
+					if picture
+						img(id="profilepicture" src=picture.imageName)
+					else
+						.upload
+							h4 Upload a profile picture
+							form(method="post" action="/upload" encType="multipart/form-data")
+								input(type='file' name="picture" accept="image/*" required)
+								br
+								input.uploading(type='submit' value="Load up your image")
+
+					h2 Welcome to your amazing profile, #{user.firstname}!
+									
+					.userinfo
+						h3 Username: #{user.username}
+						h3 First name: #{user.firstname}
+						h3 Last name: #{user.lastname}
+						h3 Age: #{user.age}
+						h3 Email: #{user.email}
+						h3 Likes games: OF COURSE!!!
+						h3 Likes science: Quite certainly
+
+		
+			footer
+				h4 &copy; 2017 So Wow Inc. All Rights Reserved.

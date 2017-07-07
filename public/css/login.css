@@ -1,0 +1,66 @@
+.login {
+	margin: 70px auto;
+	border-top: 1px solid darkgrey;
+	border-bottom: 1px solid darkgrey;
+	border-radius: 10px;
+	background-color: rgba(35, 130, 106, 0.2);
+	padding: 80px 200px;
+	width: 50%;
+}
+
+.login h1 {
+	font-family: DigitalTech;
+	font-size: 50px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.input1 {
+	text-align: center;
+	padding: 10px;
+	border: 1px solid darkgrey;
+	border-radius: 10px;
+	font-size: 30px;
+	margin-top: -5px;
+}
+
+.input2 {
+	text-align: center;
+	padding: 10px;
+	border: 1px solid darkgrey;
+	border-radius: 10px;
+	font-size: 30px;
+	margin-top: -5px;
+}
+
+.icon {
+	position: absolute;
+	height: 8%;
+	left: 510px;
+}
+
+.input:focus {
+	background-color: lightgrey;
+}
+
+
+#login {
+	text-align: center;
+}
+
+.submit {
+	font-family: DigitalTech;
+	margin: 0;
+	margin-top: 10px;
+	padding: 10px;
+	background-color: grey;
+	border: 1px solid darkgrey;
+	border-radius: 10px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.submit:hover {
+	color: white;
+	background-color: lightgrey;
+}

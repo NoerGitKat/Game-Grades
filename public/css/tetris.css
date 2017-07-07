@@ -1,0 +1,51 @@
+@font-face {
+	font-family: DigitalTech;
+	src: url(../fonts/Digital_tech.otf);
+}
+
+h3 {
+	font-family: DigitalTech;
+	margin-top: 50px;
+	display: inline-block;
+}
+
+#score {
+	padding: 0 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+#tetris {
+	margin-top: -20px;
+}
+
+body {
+	background: url('../img/pizzawormhole.gif') no-repeat;
+	background-size: 100% 120%;
+	color: black;
+	font-family: Helvetica;
+	font-size: 30px;
+	text-align: center;
+}
+
+canvas {
+	border: solid 2px #fff;
+	height: 75%;
+}
+
+#proceed {
+	font-family: DigitalTech;
+	position: absolute;
+	top: 320px;
+	right: 645px;
+	border: 1px solid darkgrey;
+	text-decoration: none;
+	padding: 10px;
+	color: white;
+}
+
+#proceed:hover {
+	background-color: darkgrey;
+	color: black;
+}
