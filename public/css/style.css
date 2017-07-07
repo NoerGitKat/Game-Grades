@@ -39,6 +39,10 @@ a {
 	padding: 10px;
 }
 
+nav ul {
+	float: right;
+}
+
 nav li {
 	text-decoration: none;
 	color: white;
@@ -48,7 +52,7 @@ nav li {
 	list-style-type: none;
 	display: inline-block;
 	margin-left: 10px;
-	float: right;
+	float: left;
 }
 
 nav li a {
